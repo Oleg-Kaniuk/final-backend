@@ -2,10 +2,10 @@ import mongoose from "mongoose";
 
 import app from "./app.js";
 
-const { DB_HOST, PORT = 3000 } = process.env;
+const {DB_HOST, PORT = 3000} = process.env;
 
 mongoose.connect(DB_HOST)
-  .then(()=> {
+  .then(() => {
     app.listen(PORT, () => {
       console.log(`Server running. Use our API on port: ${PORT}`)
     })
@@ -14,3 +14,4 @@ mongoose.connect(DB_HOST)
     console.log(error.message);
     process.exit(1);
   })
+
